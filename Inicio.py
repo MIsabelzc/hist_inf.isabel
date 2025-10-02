@@ -127,7 +127,7 @@ if st.session_state.analysis_done:
     
     if st.button("✨ Conoce el valor de tu obra de arte"):
         with st.spinner("Calculando valor..."):
-            story_prompt = f"Basándote en esta descripción: '{st.session_state.full_response}', Tu eres un experto en arte y estas constantemente comprando nuevas obras, di el valor de la obra que se dibuje o si simplemente no la comprarias."
+            story_prompt = f"Basándote en esta descripción: '{st.session_state.full_response}', Tu eres un experto en arte y estas constantemente comprando nuevas obras, di el valor de la obra que se dibuje o si simplemente no la comprarias, da un texto muy corto y claro, la compras si, no y por que, y en caso tal de que si por cuanto."
             
             story_response = openai.chat.completions.create(
                 model="gpt-4o-mini",
