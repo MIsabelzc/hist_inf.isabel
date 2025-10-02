@@ -123,11 +123,11 @@ if canvas_result.image_data is not None and api_key and analyze_button:
 # Mostrar la funcionalidad de crear historia si ya se hizo el análisis
 if st.session_state.analysis_done:
     st.divider()
-    st.subheader("📚 ¿Quieres crear una historia?")
+    st.subheader("📚 ¿Quieres saber cuanto cuesta tu obra de arte?")
     
-    if st.button("✨ Crear historia infantil"):
-        with st.spinner("Creando historia..."):
-            story_prompt = f"Basándote en esta descripción: '{st.session_state.full_response}', crea una historia infantil breve y entretenida. La historia debe ser creativa y apropiada para niños."
+    if st.button("✨ Conoce el valor de tu obra de arte"):
+        with st.spinner("Calculando valor..."):
+            story_prompt = f"Basándote en esta descripción: '{st.session_state.full_response}', Dale un valor monetario en dolares a las obras de arte."
             
             story_response = openai.chat.completions.create(
                 model="gpt-4o-mini",
