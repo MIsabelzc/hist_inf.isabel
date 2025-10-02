@@ -39,8 +39,8 @@ st.subheader("Dibuja el boceto en el panel y presiona el botón para analizarla"
 # Add canvas component
 drawing_mode = "freedraw"
 stroke_width = st.sidebar.slider('Selecciona el ancho de línea', 1, 30, 5)
-stroke_color = "#000000" 
-bg_color = '#FFFFFF'
+stroke_color = st.color_picker("Color de trazo", "#FFFFFF") 
+bg_color = st.color_picker("Color de fondo", "#000000")
 
 # Create a canvas component
 canvas_result = st_canvas(
