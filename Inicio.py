@@ -29,11 +29,11 @@ def encode_image_to_base64(image_path):
 
 
 # Streamlit 
-st.set_page_config(page_title='Tablero Inteligente')
-st.title('Tablero Inteligente')
+st.set_page_config(page_title='Tazador de arte')
+st.title('Canva inteligente')
 with st.sidebar:
     st.subheader("Acerca de:")
-    st.subheader("En esta aplicación veremos la capacidad que ahora tiene una máquina de interpretar un boceto")
+    st.subheader("En esta aplicación veremos la capacidad que tienes para el arte y si alguien compraría tu obra")
     drawing_mode = "freedraw"
     stroke_width = st.sidebar.slider('Selecciona el ancho de línea', 1, 30, 5)
     stroke_color = st.color_picker("Color de trazo", "#FFFFFF") 
@@ -63,12 +63,12 @@ api_key = os.environ['OPENAI_API_KEY']
 # Initialize the OpenAI client with the API key
 client = OpenAI(api_key=api_key)
 
-analyze_button = st.button("Analiza la imagen", type="secondary")
+analyze_button = st.button("Analiza tu obra", type="secondary")
 
 # Check if an image has been uploaded, if the API key is available, and if the button has been pressed
 if canvas_result.image_data is not None and api_key and analyze_button:
 
-    with st.spinner("Analizando ..."):
+    with st.spinner("El experto esta analizando tu obra ..."):
         # Encode the image
         input_numpy_array = np.array(canvas_result.image_data)
         input_image = Image.fromarray(input_numpy_array.astype('uint8')).convert('RGBA')
